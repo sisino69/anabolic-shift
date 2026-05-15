@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Anabolic Shift Protocol™ – Naber svaly a spaľuj tuk po 30-ke</title>
+<meta name="description" content="Makáš, ale telo sa nemení? Anabolic Shift Protocol™ je 12-týždňový systém pre mužov po 30-ke, ktorý ti pomôže nabrať svaly, zvýšiť silu a zbaviť sa tuku bez extrémov."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #080808;
+    --bg2: #0f0f0f;
+    --bg3: #141414;
+    --card: #111111;
+    --border: #1e1e1e;
+    --accent: #e8442a;
+    --accent2: #ff5c3e;
+    --gold: #c9a84c;
+    --text: #e8e4dc;
+    --muted: #7a7570;
+    --white: #ffffff;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  /* NOISE TEXTURE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.35;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  /* UTILITIES */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+  .container-wide { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  .tag {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 5px 14px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 7vw, 76px);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: var(--white);
+  }
+
+  .section-title span { color: var(--accent); }
+
+  .divider {
+    width: 48px;
+    height: 3px;
+    background: var(--accent);
+    margin: 28px 0;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 120px 0 80px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 75% 50%, rgba(232,68,42,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 8vw, 96px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 32px;
+  }
+
+  .hero-title em {
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    color: var(--muted);
+    margin-bottom: 16px;
+    font-weight: 300;
+  }
+
+  .hero-checks {
+    list-style: none;
+    margin-bottom: 44px;
+  }
+
+  .hero-checks li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: var(--text);
+    padding: 6px 0;
+  }
+
+  .hero-checks li::before {
+    content: '✔';
+    color: var(--accent);
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .hero-image-wrap {
+    position: relative;
+  }
+
+  .hero-image-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, var(--accent) 0%, transparent 60%);
+    border-radius: 4px;
+    z-index: 0;
+  }
+
+  .hero-image-wrap img {
+    position: relative;
+    z-index: 1;
+    border-radius: 3px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 24px;
+    left: -20px;
+    background: var(--accent);
+    color: white;
+    font-family: var(--font-display);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    padding: 10px 20px;
+    z-index: 2;
+  }
+
+  /* BUTTONS */
+  .btn-primary {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-family: var(--font-display);
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    padding: 18px 44px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    text-align: center;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+
+  .btn-primary:hover {
+    background: var(--accent2);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    background: transparent;
+    color: var(--muted);
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s;
+  }
+
+  .btn-secondary:hover { color: var(--text); }
+
+  .btn-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  /* STRIP */
+  .strip {
+    background: var(--accent);
+    padding: 18px 0;
+    overflow: hidden;
+  }
+
+  .strip-inner {
+    display: flex;
+    gap: 60px;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+  }
+
+  .strip-item {
+    font-family: var(--font-display);
+    font-size: 22px;
+    letter-spacing: 0.1em;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .strip-dot {
+    color: rgba(255,255,255,0.4);
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* INTRO SECTION */
+  .intro {
+    padding: 100px 0;
+    position: relative;
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .intro-img {
+    border-radius: 3px;
+    border: 1px solid var(--border);
+  }
+
+  .intro-text p {
+    color: var(--muted);
+    margin-bottom: 20px;
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .intro-text p strong {
+    color: var(--text);
+  }
+
+  /* BENEFITS */
+  .benefits {
+    padding: 100px 0;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .benefits-header {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .benefit-card {
+    background: var(--card);
+    padding: 36px 32px;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--accent);
+    transition: height 0.3s ease;
+  }
+
+  .benefit-card:hover::before { height: 100%; }
+  .benefit-card:hover { border-color: var(--accent); }
+
+  .benefit-num {
+    font-family: var(--font-display);
+    font-size: 52px;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 16px;
+    transition: color 0.2s;
+  }
+
+  .benefit-card:hover .benefit-num { color: rgba(232,68,42,0.2); }
+
+  .benefit-title {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--white);
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+  }
+
+  .benefit-text {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* PROBLEMS */
+  .problems {
+    padding: 100px 0;
+  }
+
+  .problems-header {
+    margin-bottom: 60px;
+  }
+
+  .problem-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .problem-item {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .problem-item:nth-child(odd) { padding-right: 40px; }
+  .problem-item:nth-child(even) { padding-left: 40px; border-left: 1px solid var(--border); }
+
+  .problem-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .problem-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--white);
+    margin-bottom: 8px;
+    letter-spacing: 0.01em;
+  }
+
+  .problem-text {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ABOUT */
+  .about {
+    padding: 100px 0;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about-img-wrap {
+    position: relative;
+  }
+
+  .about-img-wrap img {
+    border-radius: 3px;
+    width: 100%;
+  }
+
+  .about-img-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(8,8,8,0.9) 0%, transparent 100%);
+    padding: 30px 24px 24px;
+    border-radius: 0 0 3px 3px;
+  }
+
+  .about-name {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: white;
+    letter-spacing: 0.05em;
+  }
+
+  .about-role {
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .about-stats {
+    display: flex;
+    gap: 32px;
+    margin: 36px 0;
+  }
+
+  .stat {
+    text-align: left;
+  }
+
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 44px;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .about-text p {
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+
+  .about-text p strong { color: var(--text); }
+
+  /* MODULES */
+  .modules {
+    padding: 100px 0;
+    position: relative;
+  }
+
+  .modules-header {
+    margin-bottom: 70px;
+  }
+
+  .module-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .module-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .module-block.reverse { direction: rtl; }
+  .module-block.reverse > * { direction: ltr; }
+
+  .module-number {
+    font-family: var(--font-display);
+    font-size: 120px;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: -20px;
+  }
+
+  .module-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .module-title {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 4vw, 46px);
+    color: var(--white);
+    letter-spacing: 0.03em;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .module-desc {
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 28px;
+    font-size: 16px;
+  }
+
+  .module-lessons {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .module-lessons li {
+    display: flex;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--text);
+  }
+
+  .module-lessons li::before {
+    content: '→';
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .module-img {
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    width: 100%;
+  }
+
+  /* BONUSES */
+  .bonuses {
+    padding: 100px 0;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+  }
+
+  .bonuses-header {
+    margin-bottom: 60px;
+  }
+
+  .bonuses-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .bonus-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .bonus-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+  }
+
+  .bonus-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+
+  .bonus-body {
+    padding: 20px 18px;
+  }
+
+  .bonus-num {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .bonus-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--white);
+    line-height: 1.35;
+    margin-bottom: 10px;
+  }
+
+  .bonus-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* PRICING */
+  .pricing {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pricing::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(232,68,42,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .pricing-card {
+    max-width: 620px;
+    margin: 0 auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .pricing-top-bar {
+    background: var(--accent);
+    padding: 12px 40px;
+    font-family: var(--font-display);
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    color: white;
+    text-align: center;
+  }
+
+  .pricing-body {
+    padding: 48px 40px;
+  }
+
+  .pricing-title {
+    font-family: var(--font-display);
+    font-size: 34px;
+    color: var(--white);
+    letter-spacing: 0.05em;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .pricing-modules {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  .pricing-modules li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    color: var(--text);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pricing-modules li:last-child { border-bottom: none; }
+
+  .pricing-check {
+    color: var(--accent);
+    font-size: 14px;
+  }
+
+  .pricing-amount {
+    text-align: center;
+    margin: 40px 0 32px;
+  }
+
+  .pricing-old {
+    font-size: 22px;
+    color: var(--muted);
+    text-decoration: line-through;
+    margin-bottom: 8px;
+  }
+
+  .pricing-new {
+    font-family: var(--font-display);
+    font-size: 84px;
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+
+  .pricing-note {
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .pricing-btn {
+    display: block;
+    width: 100%;
+    background: var(--accent);
+    color: white;
+    font-family: var(--font-display);
+    font-size: 22px;
+    letter-spacing: 0.1em;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+
+  .pricing-btn:hover { background: var(--accent2); }
+
+  /* VALUE TABLE */
+  .value-table {
+    padding: 100px 0;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .value-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 700px;
+    margin: 40px auto 0;
+  }
+
+  .value-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border);
+    background: var(--card);
+  }
+
+  .value-row:last-child {
+    border-bottom: none;
+    background: var(--accent);
+  }
+
+  .value-row:last-child .value-label,
+  .value-row:last-child .value-price { color: white; }
+
+  .value-label {
+    font-size: 16px;
+    color: var(--text);
+  }
+
+  .value-price {
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+
+  .value-row:last-child .value-price { color: white; }
+
+  /* GUARANTEE */
+  .guarantee {
+    padding: 100px 0;
+  }
+
+  .guarantee-inner {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 48px;
+    border-radius: 4px;
+  }
+
+  .guarantee-badge {
+    flex-shrink: 0;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+  }
+
+  .guarantee-badge-num {
+    font-family: var(--font-display);
+    font-size: 44px;
+    color: white;
+    line-height: 1;
+  }
+
+  .guarantee-badge-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.3;
+  }
+
+  .guarantee-text h3 {
+    font-family: var(--font-display);
+    font-size: 36px;
+    color: var(--white);
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+  }
+
+  .guarantee-text p {
+    color: var(--muted);
+    line-height: 1.75;
+    font-size: 16px;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials {
+    padding: 100px 0;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+  }
+
+  .testimonials-header {
+    margin-bottom: 60px;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .testimonial-img {
+    border-radius: 3px;
+    width: 100%;
+    border: 1px solid var(--border);
+  }
+
+  /* STEPS */
+  .steps {
+    padding: 100px 0;
+  }
+
+  .steps-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+  }
+
+  .step {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 36px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .step-num {
+    font-family: var(--font-display);
+    font-size: 80px;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .step-title {
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .step-text {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* FAQ */
+  .faq {
+    padding: 100px 0;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 780px;
+    margin: 60px auto 0;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .faq-q {
+    padding: 22px 0;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: color 0.2s;
+    list-style: none;
+  }
+
+  .faq-q::-webkit-details-marker { display: none; }
+  .faq-q:hover { color: var(--accent); }
+
+  .faq-arrow {
+    color: var(--accent);
+    font-size: 18px;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  details[open] .faq-arrow { transform: rotate(45deg); }
+
+  .faq-a {
+    padding: 0 0 22px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  /* SUMMARY */
+  .summary {
+    padding: 100px 0;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 60px;
+  }
+
+  .summary-module {
+    padding: 28px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    border-radius: 3px;
+    transition: border-color 0.2s;
+  }
+
+  .summary-module:hover { border-color: var(--accent); }
+
+  .summary-module-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .summary-module-title {
+    font-family: var(--font-display);
+    font-size: 26px;
+    color: var(--white);
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+  }
+
+  .summary-module-text {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .summary-bonuses {
+    margin-top: 60px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .summary-bonuses-header {
+    background: var(--border);
+    padding: 16px 28px;
+    font-family: var(--font-display);
+    font-size: 22px;
+    letter-spacing: 0.06em;
+    color: var(--white);
+  }
+
+  .summary-bonus-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .summary-bonus-list li {
+    padding: 16px 28px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    color: var(--text);
+  }
+
+  .summary-bonus-list li:nth-child(odd) { border-right: 1px solid var(--border); }
+
+  .bonus-price-tag {
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* FOOTER CTA */
+  .footer-cta {
+    padding: 100px 0;
+    text-align: center;
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .footer-cta::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(232,68,42,0.1) 0%, transparent 70%);
+  }
+
+  .footer-cta .section-title {
+    margin-bottom: 16px;
+  }
+
+  .footer-cta p {
+    color: var(--muted);
+    margin-bottom: 40px;
+    font-size: 18px;
+  }
+
+  .footer-cta .btn-wrap {
+    align-items: center;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    padding: 48px 0 32px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 40px;
+  }
+
+  .footer-brand {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--white);
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+  }
+
+  .footer-tagline {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .footer-col h4 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-col ul li a {
+    font-size: 14px;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+
+  .footer-col ul li a:hover { color: var(--text); }
+
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .footer-legal {
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+    max-width: 500px;
+    text-align: right;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero-grid,
+    .intro-grid,
+    .about-grid,
+    .module-block,
+    .module-block.reverse,
+    .problem-list,
+    .summary-grid,
+    .testimonials-grid,
+    .steps-list,
+    .footer-grid {
+      grid-template-columns: 1fr;
+      direction: ltr;
+    }
+
+    .benefits-grid { grid-template-columns: 1fr; }
+    .bonuses-grid { grid-template-columns: repeat(2, 1fr); }
+    .summary-bonus-list { grid-template-columns: 1fr; }
+    .summary-bonus-list li:nth-child(odd) { border-right: none; }
+
+    .hero-image-wrap { order: -1; }
+    .about-grid { grid-template-columns: 1fr; }
+    .problem-item:nth-child(even) { padding-left: 0; border-left: none; }
+    .problem-item:nth-child(odd) { padding-right: 0; }
+
+    .guarantee-inner { flex-direction: column; }
+    .footer-bottom { flex-direction: column; gap: 16px; }
+    .footer-legal { text-align: left; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeInUp 0.6s ease forwards; }
+  .hero-title { animation: fadeInUp 0.6s 0.1s ease both; }
+  .hero-subtitle { animation: fadeInUp 0.6s 0.2s ease both; }
+  .hero-checks { animation: fadeInUp 0.6s 0.3s ease both; }
+  .btn-wrap { animation: fadeInUp 0.6s 0.4s ease both; }
+  .hero-image-wrap { animation: fadeInUp 0.8s 0.2s ease both; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="container-wide">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Pre mužov po 30-ke</div>
+        <h1 class="hero-title">
+          NABER SVALY.<br>
+          SPAĽUJ TUK.<br>
+          <em>ZVÝŠ SILU.</em>
+        </h1>
+        <p class="hero-subtitle">Makáš, ale telo sa nemení? Toto je systém, ktorý funguje.</p>
+        <ul class="hero-checks">
+          <li>cítiť sa mužnejšie a sebavedomejšie</li>
+          <li>mať viac energie bez dlhých tréningov</li>
+          <li>bez prísnych diét a odriekania</li>
+          <li>viditeľné výsledky už za 12 týždňov</li>
+        </ul>
+        <div class="btn-wrap">
+          <a href="https://miroslavcizmarik.sk/anabolic-shift-protocol-copy" class="btn-primary">ÁNO, CHCEM ÍSŤ DO TOHO</a>
+          <a href="#popis" class="btn-secondary">Prečítať si viac ↓</a>
+        </div>
+      </div>
+      <div class="hero-image-wrap">
+        <img src="https://content.app-sources.com/s/210966672856394651/uploads/Obrázky/HP_foto-3237039.png?format=webp" alt="Miroslav Čižmárik – Anabolic Shift Protocol"/>
+        <div class="hero-badge">ANABOLIC SHIFT PROTOCOL™</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <span class="strip-item">12 TÝŽDŇOV</span>
+    <span class="strip-item strip-dot">◆</span>
+    <span class="strip-item">NABRAŤ 3–5 KG SVALOV</span>
+    <span class="strip-item strip-dot">◆</span>
+    <span class="strip-item">SPÁLIŤ 7–13 KG TUKU</span>
+    <span class="strip-item strip-dot">◆</span>
+    <span class="strip-item">SILA +20–30%</span>
+    <span class="strip-item strip-dot">◆</span>
+    <span class="strip-item">14 DNÍ GARANCIA</span>
+    <span class="strip-item strip-dot">◆</span>
+    <!-- duplicate for infinite -->
+    <span class="strip-item">12 TÝŽDŇOV</span>
+    <span class="strip-item strip-dot">◆</span>
+    <span class="strip-item">NABRAŤ 3–5 KG SVALOV</span>
+    <span class="strip-item strip-dot">◆</span>
+    <span class="strip-item">SPÁLIŤ 7–13 KG TUKU</span>
+    <span class="strip-item strip-dot">◆</span>
+    <span class="strip-item">SILA +20–30%</span>
+    <span class="strip-item strip-dot">◆</span>
+    <span class="strip-item">14 DNÍ GARANCIA</span>
+    <span class="strip-item strip-dot">◆</span>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro" id="popis">
+  <div class="container-wide">
+    <div class="intro-grid">
+      <div>
+        <img class="intro-img" src="https://content.app-sources.com/s/210966672856394651/thumbnails/640x480/Obrázky/MODUL_1__2-4971014.png?format=webp" alt="Problém bez systému"/>
+      </div>
+      <div class="intro-text">
+        <div class="tag">Problém</div>
+        <h2 class="section-title">Prečo<br><span>nič</span><br>nefunguje?</h2>
+        <div class="divider"></div>
+        <p>Budovať svaly, spaľovať tuk a zvyšovať silu si <strong>vyžaduje hodiny vo fitku, prísnu stravu a odriekanie</strong> – najmä ak nemáš jasný systém.</p>
+        <p>Pomocou metódy <strong>Anabolic Shift Protocol™</strong> dokážeš budovať svalovú hmotu, spaľovať tuk a zvyšovať silu omnoho efektívnejšie – bez zbytočne dlhých tréningov, či komplikovaných jedálničkov plných jedál, ktoré ti nechutia.</p>
+        <p>Stačí nasledovať program. Či už trénuješ vo fitku alebo doma, aj pri nabitom dennom režime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="container-wide">
+    <div class="benefits-header">
+      <div class="tag">Čo získaš</div>
+      <h2 class="section-title">6 DÔVODOV,<br><span>PREČO TO FUNGUJE</span></h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-num">01</div>
+        <div class="benefit-title">Jedz ako chlap, nie ako na diéte</div>
+        <div class="benefit-text">Naučíš sa jesť tak, aby si budoval svaly a pritom nepriberal tuk – bez počítania každého gramu.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">02</div>
+        <div class="benefit-title">Viac energie v práci aj mimo nej</div>
+        <div class="benefit-text">Vyvážený tréning a výživa obnovia tvoju energiu, znížia únavu a zlepší sa ti spánok aj sústredenie.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">03</div>
+        <div class="benefit-title">Pocit sily, sebavedomia a mužnosti</div>
+        <div class="benefit-text">Silné a svalnaté telo automaticky zlepšuje držanie tela, hormonálnu rovnováhu aj mentálnu odolnosť.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">04</div>
+        <div class="benefit-title">Ušetríš roky pokusov a omylov</div>
+        <div class="benefit-text">Program ťa presne nasmeruje — nemusíš tráviť roky zisťovaním, čo funguje a čo nie.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">05</div>
+        <div class="benefit-title">Overený systém, nie náhodné tipy</div>
+        <div class="benefit-text">Namiesto chaotických videí z YouTube máš jasný plán krok za krokom — tréning, výživu aj regeneráciu.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-num">06</div>
+        <div class="benefit-title">Rýchlejšie výsledky bez zranení</div>
+        <div class="benefit-text">Správna technika, nastavenie objemu a regenerácie ti umožní napredovať bezpečne a efektívne.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section class="problems">
+  <div class="container">
+    <div class="problems-header">
+      <div class="tag">Spoznávaš sa?</div>
+      <h2 class="section-title">8 PROBLÉMOV,<br><span>KTORÉ ŤA BRZDIA</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="problem-list">
+      <div class="problem-item">
+        <div class="problem-icon">⏱</div>
+        <div>
+          <div class="problem-title">Nedostatok času a energie po práci</div>
+          <div class="problem-text">Tlak z práce, rodiny a povinností. Ťažko udržať konzistentnosť – najväčší zabijak výsledkov.</div>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">📉</div>
+        <div>
+          <div class="problem-title">Kolísajúca motivácia</div>
+          <div class="problem-text">Na začiatku sú chlapi „nabití", ale po pár týždňoch bez výsledkov nadšenie klesá. Chýba jasný plán.</div>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">🍽</div>
+        <div>
+          <div class="problem-title">Nesprávny jedálniček</div>
+          <div class="problem-text">Väčšina mužov buď je príliš málo, alebo príliš veľa, ale nekvalitne. Chýba balans makronutrientov.</div>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">🧬</div>
+        <div>
+          <div class="problem-title">Spomalený metabolizmus</div>
+          <div class="problem-text">Po 30-ke klesá testosterón, svaly sa budujú ťažšie, tuk sa spaľuje pomalšie. Treba iný prístup.</div>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">😴</div>
+        <div>
+          <div class="problem-title">Slabá regenerácia a spánok</div>
+          <div class="problem-text">Bez kvalitného spánku svaly nerastú. Stres a málo odpočinku ti brzdia každý pokrok.</div>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">🌐</div>
+        <div>
+          <div class="problem-title">Pretlak rád z internetu</div>
+          <div class="problem-text">Keto vs. sacharidy, silový vs. kruhový tréning – internet je plný protichodných informácií.</div>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">⚠️</div>
+        <div>
+          <div class="problem-title">Slabá technika a riziko zranenia</div>
+          <div class="problem-text">Cviky podľa YouTube videí vedú k bolestiam chrbta, ramien a kolien – a to odradí každého.</div>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">🔄</div>
+        <div>
+          <div class="problem-title">Chýbajúci systém</div>
+          <div class="problem-text">Extrémna diéta, 6× fitko, doplnky naraz – po pár týždňoch to nevydržia. Chýba jednoduchosť.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="container-wide">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <img src="https://content.app-sources.com/s/210966672856394651/uploads/Obrázky/Dizajn_bez_názvu_5-5745415.png?format=webp" alt="Miroslav Čižmárik"/>
+        <div class="about-img-overlay">
+          <div class="about-name">Miroslav Čižmárik</div>
+          <div class="about-role">Osobný tréner & autor programu</div>
+        </div>
+      </div>
+      <div>
+        <div class="tag">Kto stojí za programom</div>
+        <h2 class="section-title">POZNÁM TO<br><span>VEĽMI</span><br>DOBRE...</h2>
+        <div class="divider"></div>
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-num">30+</div>
+            <div class="stat-label">rokov cvičenia</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">15+</div>
+            <div class="stat-label">rokov ako tréner</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">5</div>
+            <div class="stat-label">rokov súťaží</div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p>Cvičeniu a kulturistike sa venujem <strong>30 rokov</strong>, mám za sebou 5 rokov súťažnej praxe medzi top kulturistami na národnej scéne.</p>
+          <p>Ako osobný tréner pôsobím <strong>viac ako 15 rokov</strong> a svoje skúsenosti som odovzdal stovkám spokojných klientov.</p>
+          <p>Veľa ľudí skúša cvičiť podľa bežne dostupných informácií, ale <strong>napriek tomu sa im nedarí dosiahnuť výsledkov</strong>. Tento program ti odovzdá to najcennejšie, čo som rokmi praxe naučil – aby tvoja cesta bola jednoduchšia, efektívnejšia a zdravšia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="modules" id="obsah">
+  <div class="container">
+    <div class="modules-header">
+      <div class="tag">Obsah programu</div>
+      <h2 class="section-title">4 MODULY.<br><span>KOMPLETNÝ</span><br>SYSTÉM.</h2>
+    </div>
+
+    <!-- Module 1 -->
+    <div class="module-block">
+      <div>
+        <div class="module-number">01</div>
+        <div class="module-tag">Modul 1</div>
+        <h3 class="module-title">ZAČNI OD SEBA</h3>
+        <p class="module-desc">Položíš pevné základy svojej premeny. Nastavíš si realistické ciele, zistíš prečo väčšina mužov po 30-ke zlyháva – a ty už nie. Tento modul ti pomôže naštartovať hlavu skôr, než začneš makať na tele.</p>
+        <ul class="module-lessons">
+          <li>Prečo muži po tridsiatke zlyhávajú a prečo ty nebudeš</li>
+          <li>Cieľ, ktorý ťa bude skutočne motivovať</li>
+          <li>Jednoduchý systém sledovania progresu</li>
+        </ul>
+      </div>
+      <img class="module-img" src="https://content.app-sources.com/s/210966672856394651/thumbnails/640x480/Obrázky/MODUL_1-0316121.png?format=webp" alt="Modul 1"/>
+    </div>
+
+    <!-- Module 2 -->
+    <div class="module-block reverse">
+      <div>
+        <div class="module-number">02</div>
+        <div class="module-tag">Modul 2</div>
+        <h3 class="module-title">JEDZ AKO CHLAP, NIE AKO CHLAPEC</h3>
+        <p class="module-desc">Získaš kontrolu nad svojou výživou – bez zbytočného počítania kalórií a diét. Dostaneš konkrétny jedálniček a nákupný zoznam. Budeš vedieť presne, čo, kedy a koľko jesť.</p>
+        <ul class="module-lessons">
+          <li>Jednoduchá výživa bez počítania kalórií</li>
+          <li>Hotový jedálniček na 7 dní + nákupný zoznam</li>
+          <li>Systém prepínania medzi „režimom rastu" a „chudnutia"</li>
+        </ul>
+      </div>
+      <img class="module-img" src="https://content.app-sources.com/s/210966672856394651/thumbnails/640x480/Obrázky/MODUL_2_11-0316408.png?format=webp" alt="Modul 2"/>
+    </div>
+
+    <!-- Module 3 -->
+    <div class="module-block">
+      <div>
+        <div class="module-number">03</div>
+        <div class="module-tag">Modul 3</div>
+        <h3 class="module-title">TRÉNINGOVÝ PLÁN 3–4× TÝŽDENNE</h3>
+        <p class="module-desc">Hotový plán na efektívne precvičenie celého tela – bez zbytočne dlhých hodín v posilke. 12-týždňový systém zameraný na budovanie svalovej hmoty a zvyšovanie sily, jasne krok za krokom.</p>
+        <ul class="module-lessons">
+          <li>12-týždňový plán presne rozpísaný na cviky, série, opakovania</li>
+          <li>Video ukážky správneho prevedenia cvikov</li>
+          <li>Systém progresie: kedy pridať váhu alebo opakovania</li>
+          <li>Tréningový denník + expresné tréningy na 20 minút</li>
+        </ul>
+      </div>
+      <img class="module-img" src="https://content.app-sources.com/s/210966672856394651/thumbnails/640x480/Obrázky/ChatGPT_Image_6._5._2026_17_00_03-8080075.png?format=webp" alt="Modul 3"/>
+    </div>
+
+    <!-- Module 4 -->
+    <div class="module-block reverse">
+      <div>
+        <div class="module-number">04</div>
+        <div class="module-tag">Modul 4</div>
+        <h3 class="module-title">VÝSLEDKY, NIE VÝHOVORKY</h3>
+        <p class="module-desc">Naučíš sa udržať disciplínu aj popri práci, rodine a povinnostiach. Objavíš tajomstvá regenerácie, spánku a prirodzeného zvýšenia testosterónu. Z premeny spravíš životný štýl.</p>
+        <ul class="module-lessons">
+          <li>Ranná a večerná rutina pre viac energie a disciplíny</li>
+          <li>Spánok, stres a prirodzené zvýšenie testosterónu</li>
+          <li>Ako vydržať aj počas dovoleniek a osláv</li>
+        </ul>
+      </div>
+      <img class="module-img" src="https://content.app-sources.com/s/210966672856394651/thumbnails/640x480/Obrázky/ChatGPT_Image_6._5._2026_17_51_48-8082856.png?format=webp" alt="Modul 4"/>
+    </div>
+  </div>
+</section>
+
+<!-- BONUSES -->
+<section class="bonuses">
+  <div class="container-wide">
+    <div class="bonuses-header">
+      <div class="tag">Teraz exkluzívne zdarma</div>
+      <h2 class="section-title">+8 <span>BONUSOV</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="bonuses-grid">
+      <div class="bonus-card">
+        <img src="https://content.app-sources.com/s/210966672856394651/thumbnails/640x480/Obrázky/MODUL_2_12-0317869.png?format=webp" alt="Bonus 1"/>
+        <div class="bonus-body">
+          <div class="bonus-num">Bonus 1 · 39€</div>
+          <div class="bonus-title">Sprievodca doplnkami výživy</div>
+          <div class="bonus-desc">Ktoré doplnky fungujú a ktoré sú zbytočné. Ušetríš stovky eur.</div>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <img src="https://content.app-sources.com/s/210966672856394651/thumbnails/640x480/Obrázky/ChatGPT_Image_6._5._2026_18_07_01-8083716.png?format=webp" alt="Bonus 2"/>
+        <div class="bonus-body">
+          <div class="bonus-num">Bonus 2 · 19€</div>
+          <div class="bonus-title">Rýchle jedlá do 10 min.</div>
+          <div class="bonus-desc">15+ chutných receptov zvládnuteľných za pár minút. Žiadne výhovorky.</div>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <img src="https://content.app-sources.com/s/210966672856394651/thumbnails/640x480/Obrázky/MODUL_2_14-0318728.png?format=webp" alt="Bonus 3"/>
+        <div class="bonus-body">
+          <div class="bonus-num">Bonus 3 · 49€</div>
+          <div class="bonus-title">Chrbát bez bolesti</div>
+          <div class="bonus-desc">Plán na spevnenie stredu tela a prevenciu bolestí chrbta po 30-ke.</div>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <img src="https://content.app-sources.com/s/210966672856394651/thumbnails/640x480/Obrázky/ChatGPT_Image_6._5._2026_18_46_57-8086071.png?format=webp" alt="Bonus 4"/>
+        <div class="bonus-body">
+          <div class="bonus-num">Bonus 4 · 19€</div>
+          <div class="bonus-title">Fit na dovolenke</div>
+          <div class="bonus-desc">Tréningy do hotelovej izby. Nestratíš formu ani počas cestovania.</div>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <img src="https://content.app-sources.com/s/210966672856394651/thumbnails/640x480/Obrázky/MODUL_2_16-0391571.png?format=webp" alt="Bonus 5"/>
+        <div class="bonus-body">
+          <div class="bonus-num">Bonus 5 · 39€</div>
+          <div class="bonus-title">Psychológia disciplíny</div>
+          <div class="bonus-desc">Ako sa prinútiť trénovať aj keď sa ti nechce. Motivácia na 12 týždňov.</div>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <img src="https://content.app-sources.com/s/210966672856394651/thumbnails/640x480/Obrázky/ChatGPT_Image_5._2._2026_16_53_18-0319022.png?format=webp" alt="Bonus 6"/>
+        <div class="bonus-body">
+          <div class="bonus-num">Bonus 6 · 39€</div>
+          <div class="bonus-title">20 vysoko-proteínových receptov</div>
+          <div class="bonus-desc">Jednoduché, sýte a chutné recepty pre naberanie svalov. Zvládne každý chlap.</div>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <img src="https://content.app-sources.com/s/210966672856394651/thumbnails/640x480/Obrázky/ChatGPT_Image_5._2._2026_17_12_23-0319147.png?format=webp" alt="Bonus 7"/>
+        <div class="bonus-body">
+          <div class="bonus-num">Bonus 7 · 9€</div>
+          <div class="bonus-title">Checklist: 30 návykov</div>
+          <div class="bonus-desc">Pre silnejšie telo a myseľ po 30-ke. Prehľadná tabuľka na každý deň.</div>
+        </div>
+      </div>
+      <div class="bonus-card">
+        <img src="https://content.app-sources.com/s/210966672856394651/thumbnails/640x480/Obrázky/MODUL_2_15-0319380.png?format=webp" alt="Bonus 8"/>
+        <div class="bonus-body">
+          <div class="bonus-num">Bonus 8 · 19€</div>
+          <div class="bonus-title">Ranný reštart</div>
+          <div class="bonus-desc">10-minútová ranná rutina na energiu. Začni deň ako chlap, ktorý má veci pod kontrolou.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE TABLE -->
+<section class="value-table">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:0;">
+      <div class="tag">Skutočná hodnota</div>
+      <h2 class="section-title">PREČO MÁ<br><span>HODNOTU</span><br>STOVIEK EUR?</h2>
+    </div>
+    <div class="value-rows">
+      <div class="value-row">
+        <span class="value-label">Osobný tréner na 12 týždňov</span>
+        <span class="value-price">600 – 800€</span>
+      </div>
+      <div class="value-row">
+        <span class="value-label">Výživový poradca + jedálniček</span>
+        <span class="value-price">100 – 300€</span>
+      </div>
+      <div class="value-row">
+        <span class="value-label">Motivačné koučovanie a knihy</span>
+        <span class="value-price">50 – 200€</span>
+      </div>
+      <div class="value-row">
+        <span class="value-label">8 bonusov (ako samostatné produkty)</span>
+        <span class="value-price">50 – 200€</span>
+      </div>
+      <div class="value-row">
+        <span class="value-label" style="font-weight:700; font-size:18px;">SPOLU</span>
+        <span class="value-price" style="font-size:28px;">800 – 1 500€</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:60px;">
+      <div class="tag">Predpredajná cena</div>
+      <h2 class="section-title">TY DNES<br><span>ZAPLATÍŠ LEN</span></h2>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-top-bar">ANABOLIC SHIFT PROTOCOL™ — PREDPREDAJ DO 01.06.2026</div>
+      <div class="pricing-body">
+        <div class="pricing-title">Čo všetko získaš:</div>
+        <ul class="pricing-modules">
+          <li><span>Modul 1: Začni od seba</span><span class="pricing-check">✔</span></li>
+          <li><span>Modul 2: Jedz ako chlap</span><span class="pricing-check">✔</span></li>
+          <li><span>Modul 3: Tréningový plán 3–4× týždenne</span><span class="pricing-check">✔</span></li>
+          <li><span>Modul 4: Výsledky, nie výhovorky</span><span class="pricing-check">✔</span></li>
+          <li><span>8 bonusov v hodnote 232€</span><span class="pricing-check">✔</span></li>
+          <li><span>14-dňová garancia vrátenia peňazí</span><span class="pricing-check">✔</span></li>
+        </ul>
+        <div class="pricing-amount">
+          <div class="pricing-old">147€</div>
+          <div class="pricing-new">67€</div>
+        </div>
+        <a href="https://miroslavcizmarik.sk/anabolic-shift-protocol-copy" class="pricing-btn">ÁNO, CHCEM ÍSŤ DO TOHO</a>
+        <p class="pricing-note">So 14-dňovou garanciou vrátenia peňazí · Platba kartou · Okamžitý prístup</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee">
+  <div class="container">
+    <div class="guarantee-inner">
+      <div class="guarantee-badge">
+        <div class="guarantee-badge-num">14</div>
+        <div class="guarantee-badge-label">DNÍ<br>GARANCIA</div>
+      </div>
+      <div class="guarantee-text">
+        <h3>GARANCIA VRÁTENIA PEŇAZÍ</h3>
+        <p>Ak máš strach, že program nebude to, čo som ti sľúbil – dávam ti garanciu vrátenia peňazí. Objednaj a zaplať teraz. Ak to nebude to, čo si očakával, do 14 dní napíš na <strong style="color:var(--text)">info@miroslavcizmarik.sk</strong> vetu: "Dobrý deň, poprosím o storno kurzu". Zruším ti členstvo a do 7 dní vrátim plnú sumu peňazí, ktorú si zaplatil. Nemusíš uviesť ani dôvod. Rozhodnutie, či ti to za tie peniaze stojí, urobíš až o 14 dní, nie dnes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="steps">
+  <div class="container">
+    <div class="tag">Ako to funguje</div>
+    <h2 class="section-title">3 JEDNODUCHÉ<br><span>KROKY</span></h2>
+    <div class="steps-list">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Klikneš na tlačidlo a objednáš si program</div>
+        <div class="step-text">Program zaplatíš kartou. Prístup dostaneš okamžite do emailu.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Získaš prístup do členskej sekcie</div>
+        <div class="step-text">Tam nájdeš všetky videá, návody a bonusy. Pustíš si lekciu na telefóne alebo notebooku a aplikuješ ju do praxe.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Začneš svoj 12-týždňový plán</div>
+        <div class="step-text">A práve tu prichádzajú prvé výsledky – viac svalov, sily a životnej energie.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container-wide">
+    <div class="testimonials-header">
+      <div class="tag">Výsledky klientov</div>
+      <h2 class="section-title">ČO NA TO<br><span>MOJI KLIENTI?</span></h2>
+    </div>
+    <div class="testimonials-grid">
+      <img class="testimonial-img" src="https://content.app-sources.com/s/210966672856394651/uploads/Obrázky/Dizajn_bez_názvu_12-7034159.png?format=webp" alt="Klient 1"/>
+      <img class="testimonial-img" src="https://content.app-sources.com/s/210966672856394651/uploads/Obrázky/Dizajn_bez_názvu_13-7035069.png?format=webp" alt="Klient 2"/>
+      <img class="testimonial-img" src="https://content.app-sources.com/s/210966672856394651/uploads/Obrázky/Dizajn_bez_názvu_14-7036324.png?format=webp" alt="Klient 3"/>
+      <img class="testimonial-img" src="https://content.app-sources.com/s/210966672856394651/uploads/Obrázky/Dizajn_bez_názvu_15-7036933.png?format=webp" alt="Klient 4"/>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:0;">
+      <div class="tag">Otázky</div>
+      <h2 class="section-title">ČASTO KLADENÉ<br><span>OTÁZKY</span></h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">Nie som už na to starý? Dá sa po 30-ke ešte budovať svaly? <span class="faq-arrow">+</span></summary>
+        <p class="faq-a">Áno. Telo má po 30-ke stále veľký potenciál nabrať svaly a spáliť tuk. Program je nastavený špeciálne pre mužov po 30-ke – berie do úvahy regeneráciu, hormóny aj životný štýl.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Nemám čas – zvládnem to popri práci a rodine? <span class="faq-arrow">+</span></summary>
+        <p class="faq-a">Zvládneš. Stačí 3–4 tréningy týždenne po 45–60 minút. Tréningy sú krátke, efektívne a prispôsobené aj nabitému rozvrhu.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Budem musieť držať prísnu diétu alebo hladovať? <span class="faq-arrow">+</span></summary>
+        <p class="faq-a">Nie. Nebudeš hladovať. Jedálniček je flexibilný a prispôsobiteľný tvojmu životu. Budeš jesť chutné, sýte jedlá s dostatkom bielkovín, kvalitných sacharidov a zdravých tukov.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Nemám rád fitko – dá sa to aj doma? <span class="faq-arrow">+</span></summary>
+        <p class="faq-a">Áno. Dostaneš varianty tréningov na doma (s minimálnym vybavením) aj do fitka. Vyberieš si podľa seba.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Koľko môžem reálne schudnúť alebo nabrať za 12 týždňov? <span class="faq-arrow">+</span></summary>
+        <p class="faq-a">Reálne výsledky: −7 až −13 kg tuku, +3 až +5 kg svalov, +20% až 30% sily. Nie je to extrémna premena, ale pevný základ, na ktorom vieš ďalej stavať.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Mám zranenia alebo slabší chrbát/kolená – nie je to nebezpečné? <span class="faq-arrow">+</span></summary>
+        <p class="faq-a">Neboj sa. Zameriavame sa na funkčný a bezpečný tréning so správnou technikou, ktorý spevní svaly aj kĺby.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Potrebujem doplnky výživy, aby som mal výsledky? <span class="faq-arrow">+</span></summary>
+        <p class="faq-a">Nie. Doplnky nie sú povinné. Najväčší rozdiel prinesie tréning, jedálniček a regenerácia. Ak budeš chcieť, odporučím základné doplnky (vitamíny, proteín, kreatín).</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Skúšal som veľa programov a nič nefungovalo – prečo tento áno? <span class="faq-arrow">+</span></summary>
+        <p class="faq-a">Väčšina programov nie je určená mužom po 30-ke. Tento je. Žiadne extrémy, žiadne zbytočné komplikácie – iba funkčný systém, ktorý zapadne do reálneho života.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<section class="summary">
+  <div class="container">
+    <div class="tag">Zhrnutie</div>
+    <h2 class="section-title">ČO VŠETKO<br><span>ZÍSKAŠ</span></h2>
+    <div class="summary-grid">
+      <div class="summary-module">
+        <div class="summary-module-tag">Modul 1</div>
+        <div class="summary-module-title">ZAČNI OD SEBA</div>
+        <div class="summary-module-text">Jasný cieľ, mentálny základ, systém sledovania progresu. Zistíš, prečo väčšina mužov po 30-tke zlyháva a ako sa tomu vyhnúť.</div>
+      </div>
+      <div class="summary-module">
+        <div class="summary-module-tag">Modul 2</div>
+        <div class="summary-module-title">JEDZ AKO CHLAP</div>
+        <div class="summary-module-text">Jednoduchý systém stravovania bez diét. Konkrétny jedálniček, nákupný zoznam a flexibilný prístup pre rast svalov aj chudnutie.</div>
+      </div>
+      <div class="summary-module">
+        <div class="summary-module-tag">Modul 3</div>
+        <div class="summary-module-title">TRÉNINGOVÝ PLÁN</div>
+        <div class="summary-module-text">Presný 12-týždňový plán, video ukážky cvikov, systém progresie a tréningový denník. Tvoje telo zosvalnatie, získa pevný tvar.</div>
+      </div>
+      <div class="summary-module">
+        <div class="summary-module-tag">Modul 4</div>
+        <div class="summary-module-title">VÝSLEDKY, NIE VÝHOVORKY</div>
+        <div class="summary-module-text">Disciplína, regenerácia, spánok a testosterón. Naučíš sa, ako z premeny spraviť životný štýl, nie len 12-týždňovú výzvu.</div>
+      </div>
+    </div>
+    <div class="summary-bonuses">
+      <div class="summary-bonuses-header">+ 8 BONUSOV ZDARMA</div>
+      <ul class="summary-bonus-list">
+        <li><span>Sprievodca doplnkami výživy</span><span class="bonus-price-tag">39€</span></li>
+        <li><span>Rýchle jedlá do 10 min.</span><span class="bonus-price-tag">19€</span></li>
+        <li><span>Chrbát bez bolesti</span><span class="bonus-price-tag">49€</span></li>
+        <li><span>Fit na dovolenke</span><span class="bonus-price-tag">19€</span></li>
+        <li><span>Psychológia disciplíny</span><span class="bonus-price-tag">39€</span></li>
+        <li><span>20 vysoko-proteínových receptov</span><span class="bonus-price-tag">39€</span></li>
+        <li><span>Checklist 30 návykov</span><span class="bonus-price-tag">9€</span></li>
+        <li><span>Ranný reštart</span><span class="bonus-price-tag">19€</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="footer-cta">
+  <div class="container">
+    <div class="tag">Predpredaj do 01.06.2026</div>
+    <h2 class="section-title">PRIPRAVENÝ<br><span>ZAČAŤ?</span></h2>
+    <p>12 týždňov. Systém, ktorý funguje. So 14-dňovou garanciou.</p>
+    <div class="btn-wrap">
+      <a href="https://miroslavcizmarik.sk/anabolic-shift-protocol-copy" class="btn-primary">ÁNO, CHCEM ÍSŤ DO TOHO — 67€</a>
+      <span style="font-size:13px; color:var(--muted);">Pôvodná cena 147€ · Akciová cena platí len do 01.06.2026</span>
+    </div>
+    <img src="https://content.app-sources.com/s/210966672856394651/uploads/Obrázky/5_stars-9452687.png?format=webp" alt="5 hviezd" style="margin: 48px auto 0; max-width:200px; opacity:0.7;"/>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Miroslav Čižmárik</div>
+        <div class="footer-tagline">Osobný tréner · Kulturista · Autor programu</div>
+        <p style="font-size:13px; color:var(--muted); margin-top:16px; line-height:1.6;">
+          Meno: Miroslav Čižmárik<br>
+          Adresa: Cintorínska 18, 952 01 Vráble<br>
+          Email: info@miroslavcizmarik.sk
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Informácie</h4>
+        <ul>
+          <li><a href="#">Obchodné podmienky</a></li>
+          <li><a href="#">Ochrana osobných údajov</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sociálne siete</h4>
+        <ul>
+          <li><a href="https://www.facebook.com/share/1Hu79x84mo/" target="_blank">Facebook</a></li>
+          <li><a href="https://www.instagram.com/miroslavcizmarik" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Miroslav Čižmárik. Všetky práva vyhradené.</div>
+      <div class="footer-legal">Všetok obsah na tejto stránke je chránený autorským zákonom a jeho šírenie bez súhlasu autora je trestné.</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
